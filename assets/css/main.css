@@ -808,6 +808,7 @@
 .category-list{
     padding: 0 0 8px 0;
     list-style: none;
+    margin-left: 9px;
 }
 .category-item{
     position: relative;
@@ -826,6 +827,16 @@
 .category-item--active .category-item-link{
     color: var(--primary-color);
 
+}
+
+.category-item--active .category-item-link::before{
+    content: "";
+    top:50%;
+    left: 4px;
+    transform: translateY(-50%);
+    position: absolute;
+    border: 4px solid;
+    border-color: transparent transparent transparent var(--primary-color);
 }
 
 .category-item-link{
@@ -927,7 +938,9 @@
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     background-repeat: no-repeat;
-    background-size: contain;/*fix kich thuoc anh theo the chua no de nhin full anh*/
+    height: 192px;
+    width: 192px;
+   background-size: contain;   /*fix kich thuoc anh theo the chua no de nhin full anh */
     background-position: top center;
 }
 .home-product-item__name{
@@ -1037,8 +1050,8 @@ i.home-product-item__star-gold{
     position: absolute;
     left: 0;
     bottom: -3px;
-    border-top: 3px solid currentColor;
-    border-left: 3px solid transparent;
+    border-top: 3px solid currentColor;/* tao tam giac goc 45 do */
+    border-left: 3px solid transparent;/* tao tam giac goc 45 do */
     filter: brightness(60%);/*tao mau dam hon*/
 
 }
@@ -1052,7 +1065,7 @@ i.home-product-item__star-gold{
     background-color: rgba(288,216,64,0.94);
     border-top-right-radius: 2px;
 }
-.home-product-item__sale-off::after{
+.home-product-item__sale-off::after{/*tao 2 tam giac ben duoi bang giam gia*/
     content: "";
     position: absolute;
     left: 0;
@@ -1144,4 +1157,38 @@ i.home-product-item__star-gold{
     font-size: 1.2rem;
     color: #737373;
 
+}
+.shopee-avatar {
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    border-radius: 50%;
+    border: 0.0625rem solid rgba(0,0,0,.09);
+    box-sizing: border-box;
+}
+
+.shopee-avatar__placeholder {
+    width: 100%;
+    position: relative;
+    padding-top: 100%;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header_navbar-item .shopee-avatar__placeholder .icon-headshot {
+    font-size: .9375rem;
+    line-height: .9375rem;
+}
+.shopee-avatar__placeholder .icon-headshot {
+    stroke: #c6c6c6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
